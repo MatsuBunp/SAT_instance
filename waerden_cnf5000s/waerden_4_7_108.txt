@@ -1,0 +1,3009 @@
+c ---- [ banner ] ------------------------------------------------------------
+c
+c Kissat SAT Solver
+c 
+c Copyright (c) 2021-2022 Armin Biere University of Freiburg
+c Copyright (c) 2019-2021 Armin Biere Johannes Kepler University Linz
+c 
+c Version 3.0.0 04691ecb8fb57fb02e95ce19153764a501e72c8b
+c gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 -W -Wall -O3 -DNDEBUG
+c Fri May 17 12:24:20 JST 2024 Linux matsusewin 5.15.146.1-microsoft-standard-WSL2 x86_64
+c
+c ---- [ parsing ] -----------------------------------------------------------
+c
+c opened and reading DIMACS file:
+c
+c   /mnt/c/Users/uncun/Downloads/labo/SAT_instance/waerden_cnf/waerden_4_7_108.cnf
+c
+c parsed 'p cnf 108 2808' header
+c closing input after reading 54015 bytes (53 KB)
+c finished parsing after 0.00 seconds
+c
+c ---- [ options ] -----------------------------------------------------------
+c
+c --statistics=true                (different from default 'false')
+c
+c ---- [ solving ] -----------------------------------------------------------
+c
+c  seconds switched rate      trail    variables
+c         MB reductions conflicts glue     remaining
+c          level restarts redundant irredundant
+c
+c *  0.00  3 0 0 0  0 0   0   0 0% 0 2808 108 99%
+c {  0.00  3 0 0 0  0 0   0   0 0% 0 2808 108 99%
+c -  0.03  3 19 0 1  6 1 1002 321 61% 12 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           0.03   92.53 %  search
+c           0.03   92.25 %  focused
+c           0.00    6.07 %  parse
+c           0.00    0.89 %  reduce
+c           0.00    0.00 %  simplify
+c =============================================
+c           0.03  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                    0                0.00 interval
+c backbone_ticks:                           0 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                      321 
+c conflicts:                             1002            31874.28 per second
+c decisions:                             1293                1.29 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             0                0    interval
+c eliminate_resolutions:                    0                0.00 per second
+c forward_checks:                           0 
+c forward_steps:                            0                0    per check
+c kitten_propagations:                      0                0.00 per solved
+c kitten_solved:                            0 
+c kitten_ticks:                             0                0.00 per prop
+c probings:                                 0                0    interval
+c probing_ticks:                            0 
+c propagations:                         16563           526880    per second
+c reductions:                               1             1002    interval
+c rephased:                                 0                0    interval
+c restarts:                                 6              167.00 interval
+c searches:                                 1             1002    interval
+c search_ticks:                        390867 
+c strengthened:                             0                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                         0 
+c subsumption_checks:                       0 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    0                0    interval
+c sweep_completed:                          0                0    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                             0                0 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                          0                0 %  variables
+c switched_modes:                           0                0    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            0                0    interval
+c vivified:                                 0                0 %  checks
+c vivify_checks:                            0                0    per vivify
+c walk_improved:                            0                0 %  walks
+c walks:                                    0                0    interval
+c walk_steps:                               0 
+c warmups:                                  0                0 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                                          0.030730 seconds
+c }  0.03  3 19 1 1  6 1 1002 321 61% 12 2808 108 99%
+c [  0.03  3 0 1 1  6 0 1002 321 0% 0 2808 108 99%
+c B  0.03  3 0 1 1  6 0 1002 321 0% 0 2808 108 99%
+c u  0.03  3 28 1 1  6 1 1191 482 61% 15 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           0.05   91.54 %  search
+c           0.03   55.84 %  focused
+c           0.02   35.53 %  stable
+c           0.00    3.96 %  probe
+c           0.00    3.96 %  simplify
+c           0.00    3.66 %  parse
+c           0.00    1.96 %  vivify
+c           0.00    1.05 %  substitute
+c           0.00    0.87 %  sweep
+c           0.00    0.54 %  reduce
+c           0.00    0.06 %  backbone
+c =============================================
+c           0.05  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                    2              941.50 interval
+c backbone_ticks:                         848 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     1174 
+c conflicts:                             1883            36466.81 per second
+c decisions:                             2335                1.24 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             0                0    interval
+c eliminate_resolutions:                    0                0.00 per second
+c forward_checks:                           0 
+c forward_steps:                            0                0    per check
+c kitten_propagations:                   1389               77.17 per solved
+c kitten_solved:                           18 
+c kitten_ticks:                          5805                4.18 per prop
+c probings:                                 1             1883    interval
+c probing_ticks:                        35122 
+c propagations:                         32065           620981    per second
+c reductions:                               1             1883    interval
+c rephased:                                 1             1883    interval
+c restarts:                                 6              313.83 interval
+c searches:                                 1             1883    interval
+c search_ticks:                        781850 
+c strengthened:                             2                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                      2918 
+c subsumption_checks:                       0 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    1             1883    interval
+c sweep_completed:                          0                0    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                            18              100 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                          8                7 %  variables
+c switched_modes:                           1             1883    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            1             1883    interval
+c vivified:                                30               79 %  checks
+c vivify_checks:                           38               38    per vivify
+c walk_improved:                            0                0 %  walks
+c walks:                                    0                0    interval
+c walk_steps:                               0 
+c warmups:                                  0                0 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                                          0.050905 seconds
+c ]  0.05  3 24 2 1  6 1 1883 1174 59% 15 2808 108 99%
+c {  0.05  3 19 2 1  6 1 1883 1174 61% 12 2808 108 99%
+c -  0.06  3 19 2 2  6 1 2003 425 61% 12 2808 108 99%
+c u  0.07  3 19 2 2 13 1 2381 773 60% 12 2808 108 99%
+c v  0.07  3 19 2 2 13 1 2381 770 60% 12 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           0.08   92.24 %  search
+c           0.06   70.31 %  focused
+c           0.02   21.82 %  stable
+c           0.00    5.01 %  probe
+c           0.00    5.01 %  simplify
+c           0.00    2.48 %  vivify
+c           0.00    2.23 %  parse
+c           0.00    1.36 %  substitute
+c           0.00    1.08 %  reduce
+c           0.00    1.06 %  sweep
+c           0.00    0.08 %  backbone
+c =============================================
+c           0.08  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                    4              697.00 interval
+c backbone_ticks:                        1703 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     1177 
+c conflicts:                             2788            33126.20 per second
+c decisions:                             3803                1.36 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             0                0    interval
+c eliminate_resolutions:                    0                0.00 per second
+c forward_checks:                           0 
+c forward_steps:                            0                0    per check
+c kitten_propagations:                   2890               78.11 per solved
+c kitten_solved:                           37 
+c kitten_ticks:                         12167                4.21 per prop
+c probings:                                 2             1394    interval
+c probing_ticks:                        77397 
+c propagations:                         49815           591887    per second
+c reductions:                               2             1394    interval
+c rephased:                                 1             2788    interval
+c restarts:                                29               96.14 interval
+c searches:                                 1             2788    interval
+c search_ticks:                       1172989 
+c strengthened:                             8                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                      5994 
+c subsumption_checks:                       0 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    2             1394    interval
+c sweep_completed:                          0                0    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                            37              100 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                         15               14 %  variables
+c switched_modes:                           2             1394    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            2             1394    interval
+c vivified:                                67               85 %  checks
+c vivify_checks:                           79               40    per vivify
+c walk_improved:                            0                0 %  walks
+c walks:                                    0                0    interval
+c walk_steps:                               0 
+c warmups:                                  0                0 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                                          0.083434 seconds
+c }  0.08  3 19 3 2 29 1 2788 1177 59% 12 2808 108 99%
+c [  0.08  3 24 3 2 29 1 2788 1177 59% 15 2808 108 99%
+c W  0.08  3 24 3 2 29 1 2788 1177 59% 15 2808 108 99%
+c -  0.10  3 23 3 3 29 1 3417 593 57% 15 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           0.13   94.81 %  search
+c           0.07   50.38 %  stable
+c           0.06   44.36 %  focused
+c           0.00    3.46 %  simplify
+c           0.00    3.15 %  probe
+c           0.00    1.56 %  vivify
+c           0.00    1.40 %  parse
+c           0.00    0.96 %  reduce
+c           0.00    0.86 %  substitute
+c           0.00    0.67 %  sweep
+c           0.00    0.30 %  walking
+c           0.00    0.13 %  warmup
+c           0.00    0.05 %  backbone
+c =============================================
+c           0.13  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                    4             1147.25 interval
+c backbone_ticks:                        1703 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     1760 
+c conflicts:                             4589            34383.55 per second
+c decisions:                             5869                1.28 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             0                0    interval
+c eliminate_resolutions:                    0                0.00 per second
+c forward_checks:                           0 
+c forward_steps:                            0                0    per check
+c kitten_propagations:                   2890               78.11 per solved
+c kitten_solved:                           37 
+c kitten_ticks:                         12167                4.21 per prop
+c probings:                                 2             2294    interval
+c probing_ticks:                        77397 
+c propagations:                         81071           607433    per second
+c reductions:                               3             1530    interval
+c rephased:                                 2             2294    interval
+c restarts:                                30              152.97 interval
+c searches:                                 1             4589    interval
+c search_ticks:                       2092525 
+c strengthened:                             8                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                      5994 
+c subsumption_checks:                       0 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    2             2294    interval
+c sweep_completed:                          0                0    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                            37              100 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                         15               14 %  variables
+c switched_modes:                           3             1530    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            2             2294    interval
+c vivified:                                67               85 %  checks
+c vivify_checks:                           79               40    per vivify
+c walk_improved:                            1              100 %  walks
+c walks:                                    1             4589    interval
+c walk_steps:                           67245 
+c warmups:                                  1              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                                          0.132826 seconds
+c ]  0.13  3 22 4 3 30 1 4589 1760 57% 15 2808 108 99%
+c {  0.13  3 19 4 3 30 1 4589 1760 59% 12 2808 108 99%
+c u  0.14  3 18 4 3 39 1 4856 1985 60% 12 2808 108 99%
+c v  0.15  3 18 4 3 39 1 4856 1982 60% 12 2808 108 99%
+c
+c  seconds  switched rate        trail     variables
+c         MB reductions conflicts    glue      remaining
+c          level restarts  redundant irredundant
+c
+c -  0.15  4 18 4 4 39 1 5151 759 60% 12 2808 108 99%
+c ^  0.18  4 17 4 4 39 1 5951 1553 59% 12 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           0.17   88.35 %  search
+c           0.10   53.35 %  focused
+c           0.07   34.95 %  stable
+c           0.02   10.46 %  simplify
+c           0.01    6.26 %  probe
+c           0.01    4.24 %  vivify
+c           0.01    3.99 %  eliminate
+c           0.00    2.09 %  subsume
+c           0.00    1.22 %  reduce
+c           0.00    1.09 %  substitute
+c           0.00    0.97 %  parse
+c           0.00    0.86 %  sweep
+c           0.00    0.21 %  walking
+c           0.00    0.09 %  warmup
+c           0.00    0.06 %  backbone
+c =============================================
+c           0.19  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                    6             1105.33 interval
+c backbone_ticks:                        2560 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     2232 
+c conflicts:                             6632            34365.01 per second
+c decisions:                             8825                1.33 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             1             6632    interval
+c eliminate_resolutions:                18877            97814.88 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  15081               84.25 per solved
+c kitten_solved:                          179 
+c kitten_ticks:                         66095                4.38 per prop
+c probings:                                 3             2211    interval
+c probing_ticks:                       172576 
+c propagations:                        119424           618819    per second
+c reductions:                               4             1658    interval
+c rephased:                                 2             3316    interval
+c restarts:                                71               93.41 interval
+c searches:                                 1             6632    interval
+c search_ticks:                       3012099 
+c strengthened:                            11                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                      9684 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    3             2211    interval
+c sweep_completed:                          0                0    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                            71               40 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                         28               26 %  variables
+c switched_modes:                           4             1658    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            3             2211    interval
+c vivified:                               114               80 %  checks
+c vivify_checks:                          143               48    per vivify
+c walk_improved:                            1              100 %  walks
+c walks:                                    1             6632    interval
+c walk_steps:                           67245 
+c warmups:                                  1              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                                          0.192260 seconds
+c }  0.19  4 17 5 4 71 1 6632 2232 59% 12 2808 108 99%
+c [  0.19  4 22 5 4 71 1 6632 2232 57% 15 2808 108 99%
+c I  0.19  4 22 5 4 71 1 6632 2232 57% 15 2808 108 99%
+c -  0.20  4 21 5 5 71 1 7151 944 57% 15 2808 108 99%
+c u  0.23  4 20 5 5 73 1 8700 2455 58% 14 2808 108 99%
+c v  0.23  4 20 5 5 73 1 8700 2450 58% 14 2808 108 99%
+c -  0.25  4 20 5 6 73 1 9390 1046 58% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           0.23   89.07 %  search
+c           0.12   48.76 %  stable
+c           0.10   40.28 %  focused
+c           0.03   10.03 %  simplify
+c           0.02    6.86 %  probe
+c           0.01    4.42 %  vivify
+c           0.01    3.01 %  eliminate
+c           0.00    1.58 %  subsume
+c           0.00    1.40 %  reduce
+c           0.00    1.31 %  substitute
+c           0.00    1.06 %  sweep
+c           0.00    0.73 %  parse
+c           0.00    0.16 %  walking
+c           0.00    0.07 %  warmup
+c           0.00    0.06 %  backbone
+c =============================================
+c           0.25  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                    8             1231.00 interval
+c backbone_ticks:                        3414 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     1502 
+c conflicts:                             9848            38512.83 per second
+c decisions:                            12475                1.27 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             1             9848    interval
+c eliminate_resolutions:                18877            73822.77 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  18644               84.36 per solved
+c kitten_solved:                          221 
+c kitten_ticks:                         84907                4.55 per prop
+c probings:                                 4             2462    interval
+c probing_ticks:                       313382 
+c propagations:                        178227           696997    per second
+c reductions:                               6             1641    interval
+c rephased:                                 3             3283    interval
+c restarts:                                73              134.90 interval
+c searches:                                 1             9848    interval
+c search_ticks:                       4603477 
+c strengthened:                            16                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     13606 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    4             2462    interval
+c sweep_completed:                          0                0    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           113               51 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                         42               39 %  variables
+c switched_modes:                           5             1970    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            4             2462    interval
+c vivified:                               157               71 %  checks
+c vivify_checks:                          222               56    per vivify
+c walk_improved:                            1              100 %  walks
+c walks:                                    1             9848    interval
+c walk_steps:                           67245 
+c warmups:                                  1              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                                          0.254982 seconds
+c ]  0.25  4 19 6 6 73 1 9848 1502 57% 14 2808 108 99%
+c {  0.26  4 17 6 6 73 1 9848 1502 59% 12 2808 108 99%
+c -  0.29  4 16 6 7 141 2 11839 1193 58% 11 2808 108 99%
+c ^  0.30  4 16 6 7 164 2 11904 1258 58% 11 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           0.28   90.13 %  search
+c           0.16   50.72 %  focused
+c           0.12   39.38 %  stable
+c           0.03    9.14 %  simplify
+c           0.02    5.54 %  probe
+c           0.01    3.56 %  vivify
+c           0.01    3.48 %  eliminate
+c           0.00    1.36 %  reduce
+c           0.00    1.29 %  subsume
+c           0.00    1.05 %  substitute
+c           0.00    0.86 %  sweep
+c           0.00    0.59 %  parse
+c           0.00    0.13 %  walking
+c           0.00    0.05 %  warmup
+c           0.00    0.05 %  backbone
+c =============================================
+c           0.32  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                    8             1643.88 interval
+c backbone_ticks:                        3414 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     2504 
+c conflicts:                            13151            41519.73 per second
+c decisions:                            17922                1.36 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             2             6576    interval
+c eliminate_resolutions:                37869           119558.25 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  28100               85.41 per solved
+c kitten_solved:                          329 
+c kitten_ticks:                        125558                4.47 per prop
+c probings:                                 4             3288    interval
+c probing_ticks:                       313382 
+c propagations:                        237924           751163    per second
+c reductions:                               7             1879    interval
+c rephased:                                 3             4384    interval
+c restarts:                               175               75.15 interval
+c searches:                                 1            13151    interval
+c search_ticks:                       6193962 
+c strengthened:                            16                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     13606 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    4             3288    interval
+c sweep_completed:                          0                0    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           113               34 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                         42               39 %  variables
+c switched_modes:                           6             2192    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            4             3288    interval
+c vivified:                               157               71 %  checks
+c vivify_checks:                          222               56    per vivify
+c walk_improved:                            1              100 %  walks
+c walks:                                    1            13151    interval
+c walk_steps:                           67245 
+c warmups:                                  1              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                                          0.316018 seconds
+c }  0.32  4 16 7 7 175 2 13151 2504 58% 11 2808 108 99%
+c [  0.32  4 19 7 7 175 1 13151 2504 57% 14 2808 108 99%
+c B  0.32  4 19 7 7 175 1 13151 2504 57% 14 2808 108 99%
+c u  0.34  4 19 7 7 175 1 13999 3282 57% 14 2808 108 99%
+c v  0.34  4 19 7 7 175 1 13999 3275 57% 14 2808 108 99%
+c -  0.35  4 19 7 8 176 1 14485 1318 57% 14 2808 108 99%
+c -  0.40  4 19 7 9 178 1 17316 1425 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           0.36   90.26 %  search
+c           0.20   50.51 %  stable
+c           0.16   39.73 %  focused
+c           0.04    9.17 %  simplify
+c           0.03    6.35 %  probe
+c           0.02    4.12 %  vivify
+c           0.01    2.72 %  eliminate
+c           0.01    1.43 %  reduce
+c           0.00    1.16 %  substitute
+c           0.00    1.01 %  subsume
+c           0.00    1.00 %  sweep
+c           0.00    0.46 %  parse
+c           0.00    0.10 %  walking
+c           0.00    0.04 %  backbone
+c           0.00    0.04 %  warmup
+c =============================================
+c           0.40  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   10             1732.00 interval
+c backbone_ticks:                        4267 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     1429 
+c conflicts:                            17320            42823.59 per second
+c decisions:                            22641                1.31 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             2             8660    interval
+c eliminate_resolutions:                37869            93630.86 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  32807               85.66 per solved
+c kitten_solved:                          383 
+c kitten_ticks:                        153600                4.68 per prop
+c probings:                                 5             3464    interval
+c probing_ticks:                       518379 
+c propagations:                        313719           775668    per second
+c reductions:                               9             1924    interval
+c rephased:                                 4             4330    interval
+c restarts:                               178               97.30 interval
+c searches:                                 1            17320    interval
+c search_ticks:                       8601449 
+c strengthened:                            23                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     17918 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    5             3464    interval
+c sweep_completed:                          0                0    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           167               44 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                         60               55 %  variables
+c switched_modes:                           7             2474    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            5             3464    interval
+c vivified:                               236               69 %  checks
+c vivify_checks:                          344               69    per vivify
+c walk_improved:                            1              100 %  walks
+c walks:                                    1            17320    interval
+c walk_steps:                           67245 
+c warmups:                                  1              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                                          0.403723 seconds
+c
+c  seconds  switched  rate          trail     variables
+c         MB reductions conflicts       glue      remaining
+c          level restarts    redundant  irredundant
+c
+c ]  0.40  4 19 8 9 178 1 17320 1429 57% 14 2808 108 99%
+c {  0.40  4 16 8 9 178 2 17320 1429 58% 11 2808 108 99%
+c -  0.46  4 15 8 10 310 2 20316 1586 57% 11 2808 108 99%
+c u  0.47  4 15 8 10 310 2 20819 1960 57% 11 2808 108 99%
+c v  0.47  4 15 8 10 310 2 20819 1954 57% 11 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           0.45   90.43 %  search
+c           0.25   49.60 %  focused
+c           0.20   40.80 %  stable
+c           0.05    9.11 %  simplify
+c           0.03    6.83 %  probe
+c           0.02    4.47 %  vivify
+c           0.01    2.20 %  eliminate
+c           0.01    1.32 %  reduce
+c           0.01    1.16 %  sweep
+c           0.01    1.14 %  substitute
+c           0.00    0.81 %  subsume
+c           0.00    0.37 %  parse
+c           0.00    0.08 %  walking
+c           0.00    0.04 %  backbone
+c           0.00    0.03 %  warmup
+c =============================================
+c           0.50  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   12             1837.67 interval
+c backbone_ticks:                        5123 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     3184 
+c conflicts:                            22052            44043.40 per second
+c decisions:                            30036                1.36 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             2            11026    interval
+c eliminate_resolutions:                37869            75633.93 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  39334               87.02 per solved
+c kitten_solved:                          452 
+c kitten_ticks:                        191622                4.87 per prop
+c probings:                                 6             3675    interval
+c probing_ticks:                       790478 
+c propagations:                        402491           803876    per second
+c reductions:                              10             2205    interval
+c rephased:                                 4             5513    interval
+c restarts:                               310               71.14 interval
+c searches:                                 1            22052    interval
+c search_ticks:                      11009131 
+c strengthened:                            32                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     21600 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    6             3675    interval
+c sweep_completed:                          0                0    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           236               52 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                         81               74 %  variables
+c switched_modes:                           8             2756    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            6             3675    interval
+c vivified:                               380               69 %  checks
+c vivify_checks:                          548               91    per vivify
+c walk_improved:                            1              100 %  walks
+c walks:                                    1            22052    interval
+c walk_steps:                           67245 
+c warmups:                                  1              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                                          0.499964 seconds
+c }  0.50  4 15 9 10 310 2 22052 3184 57% 11 2808 108 99%
+c [  0.50  4 19 9 10 310 1 22052 3184 57% 14 2808 108 99%
+c W  0.50  4 19 9 10 310 1 22052 3184 57% 14 2808 108 99%
+c -  0.53  4 19 9 11 311 1 23478 1674 57% 14 2808 108 99%
+c ^  0.56  4 19 9 11 312 1 24805 2990 57% 14 2808 108 99%
+c -  0.60  4 19 9 12 313 1 26794 1751 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           0.57   91.57 %  search
+c           0.32   51.71 %  stable
+c           0.25   39.84 %  focused
+c           0.05    8.06 %  simplify
+c           0.03    5.49 %  probe
+c           0.02    3.59 %  vivify
+c           0.01    2.36 %  eliminate
+c           0.01    1.39 %  reduce
+c           0.01    0.93 %  sweep
+c           0.01    0.92 %  substitute
+c           0.00    0.66 %  subsume
+c           0.00    0.30 %  parse
+c           0.00    0.21 %  walking
+c           0.00    0.06 %  warmup
+c           0.00    0.04 %  backbone
+c =============================================
+c           0.62  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   12             2343.58 interval
+c backbone_ticks:                        5123 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     3079 
+c conflicts:                            28123            45107.80 per second
+c decisions:                            36901                1.31 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             3             9374    interval
+c eliminate_resolutions:                56969            91375.26 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  48790               87.12 per solved
+c kitten_solved:                          560 
+c kitten_ticks:                        232101                4.76 per prop
+c probings:                                 6             4687    interval
+c probing_ticks:                       790478 
+c propagations:                        508000           814805    per second
+c reductions:                              12             2344    interval
+c rephased:                                 5             5625    interval
+c restarts:                               314               89.56 interval
+c searches:                                 1            28123    interval
+c search_ticks:                      14382869 
+c strengthened:                            32                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     21600 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    6             4687    interval
+c sweep_completed:                          0                0    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           236               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                         81               74 %  variables
+c switched_modes:                           9             3125    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            6             4687    interval
+c vivified:                               380               69 %  checks
+c vivify_checks:                          548               91    per vivify
+c walk_improved:                            2              100 %  walks
+c walks:                                    2            14062    interval
+c walk_steps:                          351164 
+c warmups:                                  2              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             1s           0.622736 seconds
+c ]  0.62  4 19 10 12 314 1 28123 3079 57% 14 2808 108 99%
+c {  0.62  4 15 10 12 314 2 28123 3079 57% 11 2808 108 99%
+c u  0.65  4 15 10 12 407 2 29209 4026 57% 11 2808 108 99%
+c v  0.65  4 15 10 12 407 2 29209 4007 57% 11 2808 108 99%
+c -  0.68  4 15 10 13 438 2 30258 1789 57% 11 2808 108 99%
+c -  0.75  4 15 10 14 516 2 33863 2040 57% 11 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           0.69   91.47 %  search
+c           0.37   49.02 %  focused
+c           0.32   42.43 %  stable
+c           0.06    8.23 %  simplify
+c           0.05    6.12 %  probe
+c           0.03    4.08 %  vivify
+c           0.01    1.94 %  eliminate
+c           0.01    1.41 %  reduce
+c           0.01    1.03 %  sweep
+c           0.01    0.95 %  substitute
+c           0.00    0.54 %  subsume
+c           0.00    0.25 %  parse
+c           0.00    0.17 %  walking
+c           0.00    0.05 %  warmup
+c           0.00    0.03 %  backbone
+c =============================================
+c           0.76  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   14             2464.86 interval
+c backbone_ticks:                        5982 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     2685 
+c conflicts:                            34508            45407.00 per second
+c decisions:                            47160                1.37 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             3            11503    interval
+c eliminate_resolutions:                56969            74962.07 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  56665               88.13 per solved
+c kitten_solved:                          643 
+c kitten_ticks:                        279480                4.93 per prop
+c probings:                                 7             4930    interval
+c probing_ticks:                      1172352 
+c propagations:                        626348           824174    per second
+c reductions:                              14             2465    interval
+c rephased:                                 5             6902    interval
+c restarts:                               516               66.88 interval
+c searches:                                 1            34508    interval
+c search_ticks:                      17755618 
+c strengthened:                            36                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     26318 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    7             4930    interval
+c sweep_completed:                          0                0    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           319               50 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        105               96 %  variables
+c switched_modes:                          10             3451    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            7             4930    interval
+c vivified:                               541               71 %  checks
+c vivify_checks:                          762              109    per vivify
+c walk_improved:                            2              100 %  walks
+c walks:                                    2            17254    interval
+c walk_steps:                          351164 
+c warmups:                                  2              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             1s           0.759245 seconds
+c }  0.76  4 14 11 14 516 2 34508 2685 57% 11 2808 108 99%
+c [  0.76  4 19 11 14 516 1 34508 2685 57% 14 2808 108 99%
+c O  0.76  4 19 11 14 516 1 34508 2685 57% 14 2808 108 99%
+c
+c  seconds   switched   rate          trail     variables
+c         MB   reductions conflicts       glue      remaining
+c          level   restarts    redundant  irredundant
+c
+c -  0.83  4 19 11 15 518 1 37604 2077 57% 14 2808 108 99%
+c u  0.87  4 20 11 15 519 1 39230 3553 57% 14 2808 108 99%
+c v  0.87  4 20 11 15 519 1 39230 3537 57% 14 2808 108 99%
+c -  0.92  4 20 11 16 521 1 41477 1925 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           0.85   91.61 %  search
+c           0.47   51.25 %  stable
+c           0.37   40.35 %  focused
+c           0.08    8.14 %  simplify
+c           0.06    6.41 %  probe
+c           0.04    4.28 %  vivify
+c           0.01    1.59 %  eliminate
+c           0.01    1.41 %  reduce
+c           0.01    1.13 %  sweep
+c           0.01    0.95 %  substitute
+c           0.00    0.44 %  subsume
+c           0.00    0.20 %  parse
+c           0.00    0.14 %  walking
+c           0.00    0.04 %  warmup
+c           0.00    0.03 %  backbone
+c =============================================
+c           0.92  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   16             2603.50 interval
+c backbone_ticks:                        6831 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     2104 
+c conflicts:                            41656            45102.80 per second
+c decisions:                            55135                1.32 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             3            13885    interval
+c eliminate_resolutions:                56969            61682.87 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  68317               86.92 per solved
+c kitten_solved:                          786 
+c kitten_ticks:                        337125                4.93 per prop
+c probings:                                 8             5207    interval
+c probing_ticks:                      1616343 
+c propagations:                        756883           819511    per second
+c reductions:                              16             2604    interval
+c rephased:                                 6             6943    interval
+c restarts:                               521               79.95 interval
+c searches:                                 1            41656    interval
+c search_ticks:                      22242500 
+c strengthened:                            53                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     30780 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    8             5207    interval
+c sweep_completed:                          1                8    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           462               59 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        155              142 %  variables
+c switched_modes:                          11             3787    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            8             5207    interval
+c vivified:                               715               70 %  checks
+c vivify_checks:                         1015              127    per vivify
+c walk_improved:                            2              100 %  walks
+c walks:                                    2            20828    interval
+c walk_steps:                          351164 
+c warmups:                                  2              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             1s           0.922898 seconds
+c ]  0.92  4 20 12 16 521 1 41656 2104 57% 14 2808 108 99%
+c {  0.92  4 14 12 16 521 2 41656 2104 57% 11 2808 108 99%
+c -  1.00  4 14 12 17 605 2 45478 2218 57% 11 2808 108 99%
+c ^  1.01  4 14 12 17 605 2 45587 2327 57% 11 2808 108 99%
+c -  1.09  4 14 12 18 757 2 49601 2508 57% 10 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           1.02   92.66 %  search
+c           0.55   49.72 %  focused
+c           0.47   42.93 %  stable
+c           0.08    7.13 %  simplify
+c           0.06    5.36 %  probe
+c           0.04    3.58 %  vivify
+c           0.02    1.78 %  reduce
+c           0.02    1.65 %  eliminate
+c           0.01    0.94 %  sweep
+c           0.01    0.79 %  substitute
+c           0.00    0.38 %  subsume
+c           0.00    0.17 %  parse
+c           0.00    0.12 %  walking
+c           0.00    0.04 %  warmup
+c           0.00    0.03 %  backbone
+c =============================================
+c           1.10  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   16             3112.31 interval
+c backbone_ticks:                        6831 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     2704 
+c conflicts:                            49797            45149.53 per second
+c decisions:                            67845                1.36 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             4            12449    interval
+c eliminate_resolutions:                76306            69184.49 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  77773               86.99 per solved
+c kitten_solved:                          894 
+c kitten_ticks:                        377581                4.85 per prop
+c probings:                                 8             6225    interval
+c probing_ticks:                      1616343 
+c propagations:                        906690           822070    per second
+c reductions:                              18             2766    interval
+c rephased:                                 6             8300    interval
+c restarts:                               757               65.78 interval
+c searches:                                 1            49797    interval
+c search_ticks:                      26729663 
+c strengthened:                            53                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     30780 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    8             6225    interval
+c sweep_completed:                          1                8    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           462               52 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        155              142 %  variables
+c switched_modes:                          12             4150    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            8             6225    interval
+c vivified:                               715               70 %  checks
+c vivify_checks:                         1015              127    per vivify
+c walk_improved:                            2              100 %  walks
+c walks:                                    2            24898    interval
+c walk_steps:                          351164 
+c warmups:                                  2              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             1s           1.102207 seconds
+c }  1.10  4 14 13 18 757 2 49797 2704 57% 10 2808 108 99%
+c [  1.10  4 20 13 18 757 1 49797 2704 57% 14 2808 108 99%
+c B  1.10  4 20 13 18 757 1 49797 2704 57% 14 2808 108 99%
+c u  1.15  4 20 13 18 758 1 50942 3668 57% 14 2808 108 99%
+c v  1.15  4 20 13 18 758 1 50942 3651 57% 14 2808 108 99%
+c -  1.23  4 20 13 19 759 1 53843 2312 57% 15 2808 108 99%
+c -  1.34  4 20 13 20 763 1 58201 2279 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           1.25   92.27 %  search
+c           0.70   51.83 %  stable
+c           0.55   40.42 %  focused
+c           0.10    7.57 %  simplify
+c           0.08    6.13 %  probe
+c           0.06    4.41 %  vivify
+c           0.02    1.63 %  reduce
+c           0.02    1.34 %  eliminate
+c           0.01    0.93 %  sweep
+c           0.01    0.75 %  substitute
+c           0.00    0.31 %  subsume
+c           0.00    0.14 %  parse
+c           0.00    0.10 %  walking
+c           0.00    0.03 %  warmup
+c           0.00    0.03 %  backbone
+c =============================================
+c           1.36  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   18             3268.78 interval
+c backbone_ticks:                        7688 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     2913 
+c conflicts:                            58838            43363.07 per second
+c decisions:                            77957                1.32 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             4            14710    interval
+c eliminate_resolutions:                76306            56236.82 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  80799               90.28 per solved
+c kitten_solved:                          895 
+c kitten_ticks:                        446614                5.53 per prop
+c probings:                                 9             6538    interval
+c probing_ticks:                      2157080 
+c propagations:                       1070930           789266    per second
+c reductions:                              20             2942    interval
+c rephased:                                 7             8405    interval
+c restarts:                               763               77.11 interval
+c searches:                                 1            58838    interval
+c search_ticks:                      32481496 
+c strengthened:                            70                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     35328 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                    9             6538    interval
+c sweep_completed:                          1                9    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           463               52 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        156              143 %  variables
+c switched_modes:                          13             4526    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                            9             6538    interval
+c vivified:                               899               69 %  checks
+c vivify_checks:                         1306              145    per vivify
+c walk_improved:                            2              100 %  walks
+c walks:                                    2            29419    interval
+c walk_steps:                          351164 
+c warmups:                                  2              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             1s           1.356147 seconds
+c ]  1.36  4 20 14 20 763 1 58838 2913 57% 14 2808 108 99%
+c {  1.36  4 14 14 20 763 2 58838 2913 57% 10 2808 108 99%
+c -  1.45  5 14 14 21 946 2 62675 2526 57% 10 2808 108 99%
+c u  1.49  5 14 14 21 1011 2 64381 4005 57% 10 2808 108 99%
+c
+c  seconds   switched    rate          trail     variables
+c         MB   reductions  conflicts       glue      remaining
+c          level    restarts    redundant  irredundant
+c
+c v  1.49  5 14 14 21 1011 2 64381 3983 57% 10 2808 108 99%
+c -  1.57  4 14 14 22 1131 2 67258 2708 57% 10 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           1.48   92.36 %  search
+c           0.77   48.37 %  focused
+c           0.70   43.99 %  stable
+c           0.12    7.49 %  simplify
+c           0.10    6.28 %  probe
+c           0.07    4.56 %  vivify
+c           0.02    1.55 %  reduce
+c           0.02    1.14 %  eliminate
+c           0.02    0.95 %  sweep
+c           0.01    0.73 %  substitute
+c           0.00    0.26 %  subsume
+c           0.00    0.12 %  parse
+c           0.00    0.08 %  walking
+c           0.00    0.02 %  warmup
+c           0.00    0.02 %  backbone
+c =============================================
+c           1.60  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   20             3441.65 interval
+c backbone_ticks:                        8547 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     4278 
+c conflicts:                            68833            43045.16 per second
+c decisions:                            94769                1.38 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             4            17208    interval
+c eliminate_resolutions:                76306            47718.45 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  84352               94.14 per solved
+c kitten_solved:                          896 
+c kitten_ticks:                        530050                6.28 per prop
+c probings:                                10             6883    interval
+c probing_ticks:                      2826605 
+c propagations:                       1260612           788332    per second
+c reductions:                              22             3129    interval
+c rephased:                                 7             9833    interval
+c restarts:                              1151               59.80 interval
+c searches:                                 1            68833    interval
+c search_ticks:                      38233695 
+c strengthened:                            81                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     40074 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   10             6883    interval
+c sweep_completed:                          1               10    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           464               52 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        157              144 %  variables
+c switched_modes:                          14             4917    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           10             6883    interval
+c vivified:                              1156               67 %  checks
+c vivify_checks:                         1717              172    per vivify
+c walk_improved:                            2              100 %  walks
+c walks:                                    2            34416    interval
+c walk_steps:                          351164 
+c warmups:                                  2              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             2s           1.598368 seconds
+c }  1.60  4 14 15 22 1151 2 68833 4278 57% 10 2808 108 99%
+c [  1.60  4 20 15 22 1151 1 68833 4278 57% 14 2808 108 99%
+c W  1.60  4 20 15 22 1151 1 68833 4278 57% 14 2808 108 99%
+c -  1.68  4 20 15 23 1153 1 71949 2905 57% 14 2808 108 99%
+c ^  1.76  4 19 15 23 1156 1 75116 6066 57% 14 2808 108 99%
+c -  1.81  5 19 15 24 1156 1 76744 2877 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           1.75   93.15 %  search
+c           0.98   51.96 %  stable
+c           0.77   41.19 %  focused
+c           0.13    6.73 %  simplify
+c           0.10    5.34 %  probe
+c           0.07    3.89 %  vivify
+c           0.03    1.48 %  reduce
+c           0.02    1.22 %  eliminate
+c           0.02    0.81 %  sweep
+c           0.01    0.62 %  substitute
+c           0.00    0.22 %  subsume
+c           0.00    0.16 %  walking
+c           0.00    0.10 %  parse
+c           0.00    0.04 %  warmup
+c           0.00    0.02 %  backbone
+c =============================================
+c           1.88  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   20             3976.55 interval
+c backbone_ticks:                        8547 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     5657 
+c conflicts:                            79531            42349.14 per second
+c decisions:                           106811                1.34 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             5            15906    interval
+c eliminate_resolutions:                96099            51171.36 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  93808               93.43 per solved
+c kitten_solved:                         1004 
+c kitten_ticks:                        570662                6.08 per prop
+c probings:                                10             7953    interval
+c probing_ticks:                      2826605 
+c propagations:                       1452597           773487    per second
+c reductions:                              24             3314    interval
+c rephased:                                 8             9941    interval
+c restarts:                              1157               68.74 interval
+c searches:                                 1            79531    interval
+c search_ticks:                      45402288 
+c strengthened:                            81                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     40074 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   10             7953    interval
+c sweep_completed:                          1               10    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           464               46 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        157              144 %  variables
+c switched_modes:                          15             5302    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           10             7953    interval
+c vivified:                              1156               67 %  checks
+c vivify_checks:                         1717              172    per vivify
+c walk_improved:                            3              100 %  walks
+c walks:                                    3            26510    interval
+c walk_steps:                         1058327 
+c warmups:                                  3              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             2s           1.877265 seconds
+c ]  1.88  5 19 16 24 1157 1 79531 5657 57% 14 2808 108 99%
+c {  1.88  5 14 16 24 1157 2 79531 5657 57% 10 2808 108 99%
+c u  1.89  5 14 16 24 1168 2 79593 5514 57% 10 2808 108 99%
+c v  1.90  5 14 16 24 1168 2 79593 5475 57% 10 2808 108 99%
+c -  1.96  4 14 16 25 1372 2 81642 2843 57% 10 2808 108 99%
+c -  2.07  5 14 16 26 1561 2 86642 3078 57% 10 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           1.99   92.85 %  search
+c           1.02   47.39 %  focused
+c           0.98   45.45 %  stable
+c           0.15    7.05 %  simplify
+c           0.13    5.84 %  probe
+c           0.09    4.27 %  vivify
+c           0.03    1.42 %  reduce
+c           0.02    1.07 %  eliminate
+c           0.02    0.92 %  sweep
+c           0.01    0.63 %  substitute
+c           0.00    0.20 %  subsume
+c           0.00    0.14 %  walking
+c           0.00    0.09 %  parse
+c           0.00    0.03 %  warmup
+c           0.00    0.02 %  backbone
+c =============================================
+c           2.15  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   22             4102.27 interval
+c backbone_ticks:                        9402 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     6679 
+c conflicts:                            90250            42035.10 per second
+c decisions:                           127088                1.41 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             5            18050    interval
+c eliminate_resolutions:                96099            44759.35 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                  98090               97.60 per solved
+c kitten_solved:                         1005 
+c kitten_ticks:                        670720                6.84 per prop
+c probings:                                11             8205    interval
+c probing_ticks:                      3713891 
+c propagations:                       1658976           772690    per second
+c reductions:                              26             3471    interval
+c rephased:                                 8            11281    interval
+c restarts:                              1673               53.95 interval
+c searches:                                 1            90250    interval
+c search_ticks:                      52570672 
+c strengthened:                            94                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     45542 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   11             8205    interval
+c sweep_completed:                          1               11    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           465               46 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        158              145 %  variables
+c switched_modes:                          16             5641    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           11             8205    interval
+c vivified:                              1411               66 %  checks
+c vivify_checks:                         2148              195    per vivify
+c walk_improved:                            3              100 %  walks
+c walks:                                    3            30083    interval
+c walk_steps:                         1058327 
+c warmups:                                  3              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             2s           2.146290 seconds
+c }  2.15  5 14 17 26 1673 2 90250 6679 57% 10 2808 108 99%
+c [  2.15  5 19 17 26 1673 1 90250 6679 57% 14 2808 108 99%
+c I  2.15  5 19 17 26 1673 1 90250 6679 57% 14 2808 108 99%
+c -  2.18  5 19 17 27 1674 1 91741 3245 57% 14 2808 108 99%
+c u  2.30  5 19 17 27 1678 1 96624 7937 57% 14 2808 108 99%
+c v  2.31  5 19 17 27 1678 1 96624 7884 57% 14 2808 108 99%
+c
+c  seconds   switched    rate          trail     variables
+c         MB   reductions  conflicts       glue      remaining
+c          level    restarts    redundant  irredundant
+c
+c -  2.32  4 19 17 28 1678 1 96939 3067 57% 14 2808 108 99%
+c -  2.45  5 19 17 29 1679 1 102230 2978 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           2.28   92.75 %  search
+c           1.26   51.38 %  stable
+c           1.02   41.37 %  focused
+c           0.18    7.16 %  simplify
+c           0.15    6.10 %  probe
+c           0.11    4.48 %  vivify
+c           0.03    1.42 %  reduce
+c           0.02    0.94 %  sweep
+c           0.02    0.93 %  eliminate
+c           0.02    0.66 %  substitute
+c           0.00    0.17 %  subsume
+c           0.00    0.12 %  walking
+c           0.00    0.08 %  parse
+c           0.00    0.03 %  warmup
+c           0.00    0.02 %  backbone
+c =============================================
+c           2.46  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   24             4286.75 interval
+c backbone_ticks:                       10256 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     3630 
+c conflicts:                           102882            41824.84 per second
+c decisions:                           141291                1.37 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             5            20576    interval
+c eliminate_resolutions:                96099            39067.33 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 103070              102.46 per solved
+c kitten_solved:                         1006 
+c kitten_ticks:                        786235                7.63 per prop
+c probings:                                12             8574    interval
+c probing_ticks:                      4859492 
+c propagations:                       1883283           765615    per second
+c reductions:                              29             3548    interval
+c rephased:                                 9            11431    interval
+c restarts:                              1680               61.24 interval
+c searches:                                 1           102882    interval
+c search_ticks:                      61306158 
+c strengthened:                            95                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     52214 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   12             8574    interval
+c sweep_completed:                          1               12    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           466               46 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        159              146 %  variables
+c switched_modes:                          17             6052    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           12             8574    interval
+c vivified:                              1651               64 %  checks
+c vivify_checks:                         2563              214    per vivify
+c walk_improved:                            3              100 %  walks
+c walks:                                    3            34294    interval
+c walk_steps:                         1058327 
+c warmups:                                  3              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             2s           2.459106 seconds
+c ]  2.46  5 19 18 29 1680 1 102882 3630 57% 14 2808 108 99%
+c {  2.46  5 14 18 29 1680 2 102882 3630 57% 10 2808 108 99%
+c -  2.58  4 14 18 30 2056 2 107615 3328 57% 10 2808 108 99%
+c -  2.71  5 14 18 31 2499 2 113092 3615 57% 10 2808 108 99%
+c !  2.73  5 14 18 31 2501 2 114204 4727 57% 10 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           2.58   93.40 %  search
+c           1.31   47.59 %  focused
+c           1.26   45.80 %  stable
+c           0.18    6.52 %  simplify
+c           0.15    5.44 %  probe
+c           0.11    3.99 %  vivify
+c           0.04    1.38 %  reduce
+c           0.03    0.97 %  eliminate
+c           0.02    0.84 %  sweep
+c           0.02    0.58 %  substitute
+c           0.00    0.15 %  subsume
+c           0.00    0.11 %  walking
+c           0.00    0.07 %  parse
+c           0.00    0.03 %  warmup
+c           0.00    0.02 %  backbone
+c =============================================
+c           2.76  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   24             4810.04 interval
+c backbone_ticks:                       10256 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     5964 
+c conflicts:                           115441            41834.47 per second
+c decisions:                           168080                1.46 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            19240    interval
+c eliminate_resolutions:               116854            42346.52 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 112526              101.01 per solved
+c kitten_solved:                         1114 
+c kitten_ticks:                        826669                7.35 per prop
+c probings:                                12             9620    interval
+c probing_ticks:                      4859492 
+c propagations:                       2127322           770917    per second
+c reductions:                              31             3724    interval
+c rephased:                                 9            12827    interval
+c restarts:                              2506               46.07 interval
+c searches:                                 1           115441    interval
+c search_ticks:                      70040463 
+c strengthened:                            95                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     52214 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   12             9620    interval
+c sweep_completed:                          1               12    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           466               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        159              146 %  variables
+c switched_modes:                          18             6413    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           12             9620    interval
+c vivified:                              1651               64 %  checks
+c vivify_checks:                         2563              214    per vivify
+c walk_improved:                            3              100 %  walks
+c walks:                                    3            38480    interval
+c walk_steps:                         1058327 
+c warmups:                                  3              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             3s           2.758773 seconds
+c }  2.76  5 14 19 31 2506 2 115441 5964 57% 10 2808 108 99%
+c [  2.76  5 19 19 31 2506 1 115441 5964 57% 14 2808 108 99%
+c B  2.76  5 19 19 31 2506 1 115441 5964 57% 14 2808 108 99%
+c u  2.78  5 19 19 31 2506 1 115500 5695 57% 14 2808 108 99%
+c v  2.78  5 19 19 31 2506 1 115500 5634 57% 14 2808 108 99%
+c -  2.86  4 19 19 32 2508 1 118661 3475 57% 14 2808 108 99%
+c -  2.99  5 18 19 33 2512 1 124317 3428 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           2.91   93.37 %  search
+c           1.60   51.28 %  stable
+c           1.31   42.08 %  focused
+c           0.20    6.56 %  simplify
+c           0.18    5.61 %  probe
+c           0.13    4.14 %  vivify
+c           0.04    1.32 %  reduce
+c           0.03    0.86 %  sweep
+c           0.03    0.85 %  eliminate
+c           0.02    0.58 %  substitute
+c           0.00    0.14 %  subsume
+c           0.00    0.10 %  walking
+c           0.00    0.06 %  parse
+c           0.00    0.02 %  warmup
+c           0.00    0.02 %  backbone
+c =============================================
+c           3.12  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   26             4991.19 interval
+c backbone_ticks:                       11112 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     8856 
+c conflicts:                           129771            41572.38 per second
+c decisions:                           184164                1.42 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            21628    interval
+c eliminate_resolutions:               116854            37434.39 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 118406              106.19 per solved
+c kitten_solved:                         1115 
+c kitten_ticks:                        960877                8.12 per prop
+c probings:                                13             9982    interval
+c probing_ticks:                      6056440 
+c propagations:                       2390491           765798    per second
+c reductions:                              33             3932    interval
+c rephased:                                10            12977    interval
+c restarts:                              2514               51.62 interval
+c searches:                                 1           129771    interval
+c search_ticks:                      80492187 
+c strengthened:                           107                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     57796 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   13             9982    interval
+c sweep_completed:                          1               13    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           467               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        160              147 %  variables
+c switched_modes:                          19             6830    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           13             9982    interval
+c vivified:                              2052               63 %  checks
+c vivify_checks:                         3236              249    per vivify
+c walk_improved:                            3              100 %  walks
+c walks:                                    3            43257    interval
+c walk_steps:                         1058327 
+c warmups:                                  3              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             3s           3.120847 seconds
+c ]  3.12  5 18 20 33 2514 1 129771 8856 57% 14 2808 108 99%
+c {  3.12  5 14 20 33 2514 2 129771 8856 57% 10 2808 108 99%
+c -  3.13  5 14 20 34 2538 2 130061 3408 57% 10 2808 108 99%
+c -  3.27  5 14 20 35 2794 2 135894 3799 57% 10 2808 108 99%
+c u  3.29  5 14 20 35 2794 2 136271 3753 57% 10 2808 108 99%
+c v  3.30  5 14 20 35 2794 2 136271 3681 57% 10 2808 108 99%
+c
+c  seconds   switched    rate           trail     variables
+c         MB   reductions  conflicts        glue      remaining
+c          level    restarts     redundant  irredundant
+c
+c -  3.44  5 14 20 36 3194 2 141810 3725 56% 10 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           3.26   93.32 %  search
+c           1.66   47.47 %  focused
+c           1.60   45.84 %  stable
+c           0.23    6.61 %  simplify
+c           0.20    5.76 %  probe
+c           0.15    4.30 %  vivify
+c           0.05    1.32 %  reduce
+c           0.03    0.89 %  sweep
+c           0.03    0.76 %  eliminate
+c           0.02    0.56 %  substitute
+c           0.00    0.12 %  subsume
+c           0.00    0.09 %  walking
+c           0.00    0.05 %  parse
+c           0.00    0.02 %  warmup
+c           0.00    0.02 %  backbone
+c =============================================
+c           3.49  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   28             5137.07 interval
+c backbone_ticks:                       11967 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     5747 
+c conflicts:                           143838            41188.20 per second
+c decisions:                           214195                1.49 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            23973    interval
+c eliminate_resolutions:               116854            33461.29 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 124740              111.77 per solved
+c kitten_solved:                         1116 
+c kitten_ticks:                       1113250                8.92 per prop
+c probings:                                14            10274    interval
+c probing_ticks:                      7333172 
+c propagations:                       2671641           765028    per second
+c reductions:                              36             3996    interval
+c rephased:                                10            14384    interval
+c restarts:                              3425               42.00 interval
+c searches:                                 1           143838    interval
+c search_ticks:                      90945453 
+c strengthened:                           126                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     62460 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   14            10274    interval
+c sweep_completed:                          1               14    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           468               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        161              148 %  variables
+c switched_modes:                          20             7192    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           14            10274    interval
+c vivified:                              2563               62 %  checks
+c vivify_checks:                         4102              293    per vivify
+c walk_improved:                            3              100 %  walks
+c walks:                                    3            47946    interval
+c walk_steps:                         1058327 
+c warmups:                                  3              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             3s           3.491491 seconds
+c }  3.49  5 14 21 36 3425 2 143838 5747 56% 10 2808 108 99%
+c [  3.49  5 18 21 36 3425 1 143838 5747 57% 14 2808 108 99%
+c W  3.49  5 18 21 36 3425 1 143838 5747 57% 14 2808 108 99%
+c -  3.59  5 18 21 37 3427 1 147810 3810 57% 14 2808 108 99%
+c -  3.73  5 18 21 38 3431 1 153892 3630 57% 14 2808 108 99%
+c u  3.87  5 18 21 38 3434 1 158956 8432 57% 14 2808 108 99%
+c v  3.88  5 18 21 38 3434 1 158956 8365 57% 14 2808 108 99%
+c -  3.91  5 18 21 39 3434 1 160058 3377 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           3.66   93.12 %  search
+c           2.00   50.95 %  stable
+c           1.66   42.17 %  focused
+c           0.27    6.82 %  simplify
+c           0.24    5.99 %  probe
+c           0.18    4.50 %  vivify
+c           0.05    1.30 %  reduce
+c           0.04    0.90 %  sweep
+c           0.03    0.68 %  eliminate
+c           0.02    0.58 %  substitute
+c           0.01    0.15 %  walking
+c           0.00    0.11 %  subsume
+c           0.00    0.05 %  parse
+c           0.00    0.03 %  warmup
+c           0.00    0.02 %  backbone
+c =============================================
+c           3.93  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   30             5360.97 interval
+c backbone_ticks:                       12818 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     4143 
+c conflicts:                           160829            40907.90 per second
+c decisions:                           233264                1.45 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            26805    interval
+c eliminate_resolutions:               116854            29722.57 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 131866              118.05 per solved
+c kitten_solved:                         1117 
+c kitten_ticks:                       1281840                9.72 per prop
+c probings:                                15            10722    interval
+c probing_ticks:                      8967366 
+c propagations:                       2978489           757598    per second
+c reductions:                              39             4124    interval
+c rephased:                                11            14621    interval
+c restarts:                              3435               46.82 interval
+c searches:                                 1           160829    interval
+c search_ticks:                     103264557 
+c strengthened:                           138                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     69376 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   15            10722    interval
+c sweep_completed:                          1               15    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           469               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        162              149 %  variables
+c switched_modes:                          21             7659    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           15            10722    interval
+c vivified:                              2889               61 %  checks
+c vivify_checks:                         4741              316    per vivify
+c walk_improved:                            4              100 %  walks
+c walks:                                    4            40207    interval
+c walk_steps:                         2156993 
+c warmups:                                  4              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             4s           3.930762 seconds
+c ]  3.93  5 18 22 39 3435 1 160829 4143 57% 14 2808 108 99%
+c {  3.93  5 14 22 39 3435 2 160829 4143 56% 10 2808 108 99%
+c -  4.08  5 14 22 40 3894 2 166304 3846 56% 11 2808 108 99%
+c -  4.24  5 14 22 41 4132 2 172629 4211 56% 11 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           4.08   93.79 %  search
+c           2.08   47.79 %  focused
+c           2.00   46.00 %  stable
+c           0.27    6.16 %  simplify
+c           0.24    5.41 %  probe
+c           0.18    4.06 %  vivify
+c           0.05    1.26 %  reduce
+c           0.04    0.81 %  sweep
+c           0.03    0.61 %  eliminate
+c           0.02    0.52 %  substitute
+c           0.01    0.13 %  walking
+c           0.00    0.10 %  subsume
+c           0.00    0.04 %  parse
+c           0.00    0.03 %  warmup
+c           0.00    0.01 %  backbone
+c =============================================
+c           4.35  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   30             5908.50 interval
+c backbone_ticks:                       12818 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     8828 
+c conflicts:                           177255            40702.96 per second
+c decisions:                           267781                1.51 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            29542    interval
+c eliminate_resolutions:               116854            26833.11 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 131866              118.05 per solved
+c kitten_solved:                         1117 
+c kitten_ticks:                       1281840                9.72 per prop
+c probings:                                15            11817    interval
+c probing_ticks:                      8967366 
+c propagations:                       3294977           756624    per second
+c reductions:                              41             4323    interval
+c rephased:                                11            16114    interval
+c restarts:                              4470               39.65 interval
+c searches:                                 1           177255    interval
+c search_ticks:                     115583776 
+c strengthened:                           138                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     69376 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   15            11817    interval
+c sweep_completed:                          1               15    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           469               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        162              149 %  variables
+c switched_modes:                          22             8057    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           15            11817    interval
+c vivified:                              2889               61 %  checks
+c vivify_checks:                         4741              316    per vivify
+c walk_improved:                            4              100 %  walks
+c walks:                                    4            44314    interval
+c walk_steps:                         2156993 
+c warmups:                                  4              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             4s           4.354123 seconds
+c }  4.35  5 14 23 41 4470 2 177255 8828 56% 11 2808 108 99%
+c [  4.35  5 18 23 41 4470 1 177255 8828 57% 14 2808 108 99%
+c O  4.35  5 18 23 41 4470 1 177255 8828 57% 14 2808 108 99%
+c -  4.41  5 18 23 42 4471 1 179032 4291 57% 14 2808 108 99%
+c u  4.54  5 19 23 42 4475 1 183593 8551 57% 14 2808 108 99%
+c v  4.54  5 19 23 42 4475 1 183593 8479 57% 14 2808 108 99%
+c -  4.60  5 19 23 43 4476 1 185512 3842 57% 14 2808 108 99%
+c
+c  seconds   switched    rate           trail     variables
+c         MB   reductions  conflicts        glue      remaining
+c          level    restarts     redundant  irredundant
+c
+c -  4.76  5 19 23 44 4479 1 192069 3650 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           4.55   93.64 %  search
+c           2.47   50.80 %  stable
+c           2.08   42.83 %  focused
+c           0.31    6.31 %  simplify
+c           0.27    5.64 %  probe
+c           0.21    4.27 %  vivify
+c           0.06    1.24 %  reduce
+c           0.04    0.83 %  sweep
+c           0.03    0.55 %  eliminate
+c           0.03    0.53 %  substitute
+c           0.01    0.12 %  walking
+c           0.00    0.09 %  subsume
+c           0.00    0.04 %  parse
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  backbone
+c =============================================
+c           4.86  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   32             6130.44 interval
+c backbone_ticks:                       13671 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     7735 
+c conflicts:                           196174            40373.53 per second
+c decisions:                           288867                1.47 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            32696    interval
+c eliminate_resolutions:               116854            24049.10 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 140027              125.25 per solved
+c kitten_solved:                         1118 
+c kitten_ticks:                       1468675               10.49 per prop
+c probings:                                16            12261    interval
+c probing_ticks:                     10849049 
+c propagations:                       3631776           747436    per second
+c reductions:                              44             4458    interval
+c rephased:                                12            16348    interval
+c restarts:                              4482               43.77 interval
+c searches:                                 1           196174    interval
+c search_ticks:                     129920128 
+c strengthened:                           150                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     76358 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   16            12261    interval
+c sweep_completed:                          1               16    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           470               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        163              150 %  variables
+c switched_modes:                          23             8529    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           16            12261    interval
+c vivified:                              3254               60 %  checks
+c vivify_checks:                         5459              341    per vivify
+c walk_improved:                            4              100 %  walks
+c walks:                                    4            49044    interval
+c walk_steps:                         2156993 
+c warmups:                                  4              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             5s           4.858249 seconds
+c ]  4.86  5 19 24 44 4482 1 196174 7735 57% 14 2808 108 99%
+c {  4.86  5 14 24 44 4482 2 196174 7735 56% 11 2808 108 99%
+c -  4.92  5 14 24 45 4573 2 198702 3855 56% 11 2808 108 99%
+c -  5.10  5 14 24 46 4995 2 205410 4323 56% 11 2808 108 99%
+c u  5.25  5 14 24 46 5271 2 210206 8788 56% 11 2808 108 99%
+c v  5.26  5 14 24 46 5271 2 210206 8679 56% 11 2808 108 99%
+c -  5.33  5 14 24 47 5375 2 212192 4371 56% 11 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           5.05   93.46 %  search
+c           2.58   47.74 %  focused
+c           2.47   45.72 %  stable
+c           0.35    6.50 %  simplify
+c           0.32    5.90 %  probe
+c           0.24    4.50 %  vivify
+c           0.07    1.22 %  reduce
+c           0.05    0.85 %  sweep
+c           0.03    0.53 %  substitute
+c           0.03    0.49 %  eliminate
+c           0.01    0.11 %  walking
+c           0.00    0.08 %  subsume
+c           0.00    0.03 %  parse
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  backbone
+c =============================================
+c           5.40  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   34             6336.56 interval
+c backbone_ticks:                       14528 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     7620 
+c conflicts:                           215443            39901.36 per second
+c decisions:                           326015                1.51 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            35907    interval
+c eliminate_resolutions:               116854            21642.07 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 148657              132.85 per solved
+c kitten_solved:                         1119 
+c kitten_ticks:                       1670192               11.24 per prop
+c probings:                                17            12673    interval
+c probing_ticks:                     12881137 
+c propagations:                       4004284           741618    per second
+c reductions:                              47             4584    interval
+c rephased:                                12            17954    interval
+c restarts:                              5461               39.45 interval
+c searches:                                 1           215443    interval
+c search_ticks:                     144256937 
+c strengthened:                           163                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     83488 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   17            12673    interval
+c sweep_completed:                          1               17    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           471               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        164              150 %  variables
+c switched_modes:                          24             8977    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           17            12673    interval
+c vivified:                              3687               59 %  checks
+c vivify_checks:                         6272              369    per vivify
+c walk_improved:                            4              100 %  walks
+c walks:                                    4            53861    interval
+c walk_steps:                         2156993 
+c warmups:                                  4              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             5s           5.398668 seconds
+c }  5.40  5 14 25 47 5461 2 215443 7620 56% 11 2808 108 99%
+c [  5.40  5 19 25 47 5461 1 215443 7620 57% 14 2808 108 99%
+c B  5.40  5 19 25 47 5461 1 215443 7620 57% 14 2808 108 99%
+c -  5.49  5 19 25 48 5463 1 219047 4556 57% 14 2808 108 99%
+c -  5.66  5 19 25 49 5467 1 225975 4344 57% 14 2808 108 99%
+c -  5.85  5 18 25 50 5472 1 232978 4182 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           5.59   94.06 %  search
+c           3.01   50.70 %  stable
+c           2.58   43.36 %  focused
+c           0.35    5.90 %  simplify
+c           0.32    5.36 %  probe
+c           0.24    4.09 %  vivify
+c           0.07    1.21 %  reduce
+c           0.05    0.77 %  sweep
+c           0.03    0.48 %  substitute
+c           0.03    0.45 %  eliminate
+c           0.01    0.10 %  walking
+c           0.00    0.07 %  subsume
+c           0.00    0.03 %  parse
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  backbone
+c =============================================
+c           5.94  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   34             6971.03 interval
+c backbone_ticks:                       14528 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     8208 
+c conflicts:                           237015            39869.65 per second
+c decisions:                           350292                1.48 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            39502    interval
+c eliminate_resolutions:               116854            19656.68 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 148657              132.85 per solved
+c kitten_solved:                         1119 
+c kitten_ticks:                       1670192               11.24 per prop
+c probings:                                17            13942    interval
+c probing_ticks:                     12881137 
+c propagations:                       4373399           735675    per second
+c reductions:                              50             4740    interval
+c rephased:                                13            18232    interval
+c restarts:                              5474               43.30 interval
+c searches:                                 1           237015    interval
+c search_ticks:                     160758942 
+c strengthened:                           163                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     83488 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   17            13942    interval
+c sweep_completed:                          1               17    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           471               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        164              150 %  variables
+c switched_modes:                          25             9481    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           17            13942    interval
+c vivified:                              3687               59 %  checks
+c vivify_checks:                         6272              369    per vivify
+c walk_improved:                            4              100 %  walks
+c walks:                                    4            59254    interval
+c walk_steps:                         2156993 
+c warmups:                                  4              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             6s           5.944027 seconds
+c ]  5.94  5 18 26 50 5474 1 237015 8208 57% 14 2808 108 99%
+c {  5.94  5 14 26 50 5474 2 237015 8208 56% 11 2808 108 99%
+c u  6.03  5 14 26 50 5593 2 238833 9678 56% 11 2808 108 99%
+c v  6.04  5 14 26 50 5593 2 238833 9582 56% 11 2808 108 99%
+c -  6.09  5 14 26 51 5630 2 240051 4201 57% 11 2808 108 99%
+c -  6.31  5 14 26 52 6116 2 247194 4758 57% 11 2808 108 99%
+c
+c  seconds   switched    rate           trail     variables
+c         MB   reductions  conflicts        glue      remaining
+c          level    restarts     redundant  irredundant
+c
+c -  6.49  5 14 26 53 6249 2 254405 5066 57% 11 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           6.19   93.95 %  search
+c           3.18   48.24 %  focused
+c           3.01   45.71 %  stable
+c           0.40    6.01 %  simplify
+c           0.36    5.52 %  probe
+c           0.28    4.22 %  vivify
+c           0.08    1.18 %  reduce
+c           0.05    0.78 %  sweep
+c           0.03    0.50 %  substitute
+c           0.03    0.40 %  eliminate
+c           0.01    0.09 %  walking
+c           0.00    0.06 %  subsume
+c           0.00    0.03 %  parse
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  backbone
+c =============================================
+c           6.59  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   36             7184.67 interval
+c backbone_ticks:                       15386 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     9304 
+c conflicts:                           258648            39230.06 per second
+c decisions:                           388545                1.50 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            43108    interval
+c eliminate_resolutions:               116854            17723.66 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 157482              140.61 per solved
+c kitten_solved:                         1120 
+c kitten_ticks:                       1890766               12.01 per prop
+c probings:                                18            14369    interval
+c probing_ticks:                     15104802 
+c propagations:                       4784443           725673    per second
+c reductions:                              53             4880    interval
+c rephased:                                13            19896    interval
+c restarts:                              6376               40.57 interval
+c searches:                                 1           258648    interval
+c search_ticks:                     177261366 
+c strengthened:                           171                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     91094 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   18            14369    interval
+c sweep_completed:                          1               18    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           472               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        165              151 %  variables
+c switched_modes:                          26             9948    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           18            14369    interval
+c vivified:                              4132               58 %  checks
+c vivify_checks:                         7117              395    per vivify
+c walk_improved:                            4              100 %  walks
+c walks:                                    4            64662    interval
+c walk_steps:                         2156993 
+c warmups:                                  4              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             7s           6.592381 seconds
+c }  6.59  5 14 27 53 6376 2 258648 9304 56% 11 2808 108 99%
+c [  6.59  5 18 27 53 6376 1 258648 9304 57% 14 2808 108 99%
+c W  6.60  5 18 27 53 6376 1 258648 9304 57% 14 2808 108 99%
+c -  6.68  5 18 27 54 6378 1 261686 5191 57% 14 2808 108 99%
+c -  6.88  5 18 27 55 6382 1 269034 5001 57% 14 2808 108 99%
+c u  6.92  5 18 27 55 6382 1 269493 4938 57% 14 2808 108 99%
+c v  6.93  5 18 27 55 6382 1 269493 4828 57% 14 2808 108 99%
+c -  7.12  5 18 27 56 6387 1 276451 4410 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           6.79   93.77 %  search
+c           3.61   49.88 %  stable
+c           3.18   43.89 %  focused
+c           0.45    6.20 %  simplify
+c           0.41    5.60 %  probe
+c           0.31    4.31 %  vivify
+c           0.08    1.17 %  reduce
+c           0.06    0.79 %  sweep
+c           0.03    0.48 %  substitute
+c           0.03    0.37 %  eliminate
+c           0.02    0.24 %  walking
+c           0.00    0.06 %  subsume
+c           0.00    0.03 %  parse
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  backbone
+c =============================================
+c           7.25  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   38             7407.32 interval
+c backbone_ticks:                       16240 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     9415 
+c conflicts:                           281478            38841.08 per second
+c decisions:                           414179                1.47 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            46913    interval
+c eliminate_resolutions:               116854            16124.66 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 166910              148.89 per solved
+c kitten_solved:                         1121 
+c kitten_ticks:                       2134221               12.79 per prop
+c probings:                                19            14815    interval
+c probing_ticks:                     17244850 
+c propagations:                       5198365           717321    per second
+c reductions:                              56             5026    interval
+c rephased:                                14            20106    interval
+c restarts:                              6389               44.06 interval
+c searches:                                 1           281478    interval
+c search_ticks:                     196078300 
+c strengthened:                           225                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                     96364 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   19            14815    interval
+c sweep_completed:                          1               19    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           473               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        166              152 %  variables
+c switched_modes:                          27            10425    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           19            14815    interval
+c vivified:                              4818               57 %  checks
+c vivify_checks:                         8421              443    per vivify
+c walk_improved:                            5              100 %  walks
+c walks:                                    5            56296    interval
+c walk_steps:                         7578900 
+c warmups:                                  5              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             7s           7.246194 seconds
+c ]  7.25  5 18 28 56 6389 1 281478 9415 57% 14 2808 108 99%
+c {  7.25  5 14 28 56 6389 2 281478 9415 56% 11 2808 108 99%
+c -  7.32  5 14 28 57 6551 2 283936 4599 57% 11 2808 108 99%
+c -  7.51  5 14 28 58 6727 2 291485 5043 56% 10 2808 108 99%
+c -  7.72  5 14 28 59 7185 2 299100 5499 56% 10 2808 108 99%
+c u  7.84  5 14 28 59 7439 2 302213 8209 56% 10 2808 108 99%
+c v  7.85  5 14 28 59 7439 2 302213 8104 56% 10 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           7.45   93.63 %  search
+c           3.84   48.21 %  focused
+c           3.61   45.42 %  stable
+c           0.50    6.34 %  simplify
+c           0.46    5.79 %  probe
+c           0.36    4.50 %  vivify
+c           0.09    1.14 %  reduce
+c           0.06    0.79 %  sweep
+c           0.04    0.47 %  substitute
+c           0.03    0.34 %  eliminate
+c           0.02    0.22 %  walking
+c           0.00    0.05 %  subsume
+c           0.00    0.02 %  parse
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  backbone
+c =============================================
+c           7.96  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   40             7635.12 interval
+c backbone_ticks:                       17095 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                    11290 
+c conflicts:                           305405            38376.04 per second
+c decisions:                           459989                1.51 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            50901    interval
+c eliminate_resolutions:               116854            14683.43 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 177227              157.96 per solved
+c kitten_solved:                         1122 
+c kitten_ticks:                       2391498               13.49 per prop
+c probings:                                20            15270    interval
+c probing_ticks:                     19795729 
+c propagations:                       5659486           711150    per second
+c reductions:                              59             5176    interval
+c rephased:                                14            21815    interval
+c restarts:                              7623               40.06 interval
+c searches:                                 1           305405    interval
+c search_ticks:                     214898073 
+c strengthened:                           267                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                    103250 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   20            15270    interval
+c sweep_completed:                          1               20    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           474               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        167              153 %  variables
+c switched_modes:                          28            10907    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           20            15270    interval
+c vivified:                              5363               56 %  checks
+c vivify_checks:                         9523              476    per vivify
+c walk_improved:                            5              100 %  walks
+c walks:                                    5            61081    interval
+c walk_steps:                         7578900 
+c warmups:                                  5              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             8s           7.957497 seconds
+c }  7.96  5 14 29 59 7623 2 305405 11290 56% 11 2808 108 99%
+c [  7.96  5 18 29 59 7623 1 305405 11290 57% 14 2808 108 99%
+c I  7.96  5 18 29 59 7623 1 305405 11290 57% 14 2808 108 99%
+c -  8.00  5 18 29 60 7624 1 306782 5309 57% 14 2808 108 99%
+c
+c  seconds   switched    rate           trail     variables
+c         MB   reductions  conflicts        glue      remaining
+c          level    restarts     redundant  irredundant
+c
+c -  8.23  5 18 29 61 7629 1 314528 5130 57% 13 2808 108 99%
+c -  8.44  5 18 29 62 7633 1 322338 4929 57% 13 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           8.14   94.14 %  search
+c           4.30   49.77 %  stable
+c           3.84   44.37 %  focused
+c           0.50    5.83 %  simplify
+c           0.46    5.33 %  probe
+c           0.36    4.14 %  vivify
+c           0.10    1.13 %  reduce
+c           0.06    0.73 %  sweep
+c           0.04    0.44 %  substitute
+c           0.03    0.31 %  eliminate
+c           0.02    0.20 %  walking
+c           0.00    0.05 %  subsume
+c           0.00    0.02 %  parse
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  backbone
+c =============================================
+c           8.65  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   40             8246.95 interval
+c backbone_ticks:                       17095 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                    12447 
+c conflicts:                           329878            38148.84 per second
+c decisions:                           487402                1.48 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            54980    interval
+c eliminate_resolutions:               116854            13513.62 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 177227              157.96 per solved
+c kitten_solved:                         1122 
+c kitten_ticks:                       2391498               13.49 per prop
+c probings:                                20            16494    interval
+c probing_ticks:                     19795729 
+c propagations:                       6084349           703626    per second
+c reductions:                              62             5321    interval
+c rephased:                                15            21992    interval
+c restarts:                              7636               43.20 interval
+c searches:                                 1           329878    interval
+c search_ticks:                     236176836 
+c strengthened:                           267                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                    103250 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   20            16494    interval
+c sweep_completed:                          1               20    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           474               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        167              153 %  variables
+c switched_modes:                          29            11375    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           20            16494    interval
+c vivified:                              5363               56 %  checks
+c vivify_checks:                         9523              476    per vivify
+c walk_improved:                            5              100 %  walks
+c walks:                                    5            65976    interval
+c walk_steps:                         7578900 
+c warmups:                                  5              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             9s           8.646407 seconds
+c ]  8.65  5 18 30 62 7636 1 329878 12447 57% 14 2808 108 99%
+c {  8.65  5 14 30 62 7636 2 329878 12447 56% 11 2808 108 99%
+c -  8.66  5 14 30 63 7689 2 330212 4917 56% 11 2808 108 99%
+c u  8.87  5 14 30 63 8055 2 337015 11277 56% 11 2808 108 99%
+c v  8.89  5 14 30 63 8055 2 337015 11152 56% 11 2808 108 99%
+c -  8.95  5 14 30 64 8265 2 338150 4916 56% 11 2808 108 99%
+c -  9.18  5 14 30 65 8670 2 346153 5494 56% 11 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           8.83   94.00 %  search
+c           4.53   48.21 %  focused
+c           4.30   45.79 %  stable
+c           0.56    5.98 %  simplify
+c           0.52    5.51 %  probe
+c           0.41    4.31 %  vivify
+c           0.10    1.11 %  reduce
+c           0.07    0.75 %  sweep
+c           0.04    0.44 %  substitute
+c           0.03    0.28 %  eliminate
+c           0.02    0.18 %  walking
+c           0.00    0.04 %  subsume
+c           0.00    0.02 %  parse
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  backbone
+c =============================================
+c           9.40  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   42             8431.52 interval
+c backbone_ticks:                       17954 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                    13440 
+c conflicts:                           354124            37676.77 per second
+c decisions:                           536678                1.52 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            59021    interval
+c eliminate_resolutions:               116854            12432.60 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 189040              168.33 per solved
+c kitten_solved:                         1123 
+c kitten_ticks:                       2692259               14.24 per prop
+c probings:                                21            16863    interval
+c probing_ticks:                     22826476 
+c propagations:                       6555728           697492    per second
+c reductions:                              65             5448    interval
+c rephased:                                15            23608    interval
+c restarts:                              9097               38.93 interval
+c searches:                                 1           354124    interval
+c search_ticks:                     257453470 
+c strengthened:                           279                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                    111630 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   21            16863    interval
+c sweep_completed:                          1               21    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           475               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        168              154 %  variables
+c switched_modes:                          30            11804    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           21            16863    interval
+c vivified:                              5932               56 %  checks
+c vivify_checks:                        10587              504    per vivify
+c walk_improved:                            5              100 %  walks
+c walks:                                    5            70825    interval
+c walk_steps:                         7578900 
+c warmups:                                  5              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                             9s           9.398272 seconds
+c }  9.40  5 14 31 65 9097 2 354124 13440 56% 11 2808 108 99%
+c [  9.40  5 18 31 65 9097 1 354124 13440 57% 14 2808 108 99%
+c B  9.40  5 18 31 65 9097 1 354124 13440 57% 14 2808 108 99%
+c -  9.41  5 18 31 66 9097 1 354215 5821 57% 14 2808 108 99%
+c -  9.68  5 18 31 67 9102 1 362340 5654 57% 14 2808 108 99%
+c -  9.92  5 18 31 68 9106 1 370527 5234 57% 14 2808 108 99%
+c u 10.03  5 18 31 68 9109 1 373924 7938 57% 14 2808 108 99%
+c v 10.04  5 18 31 68 9109 1 373924 7769 57% 14 2808 108 99%
+c - 10.19  5 18 31 69 9110 1 378775 4870 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c           9.61   93.94 %  search
+c           5.08   49.63 %  stable
+c           4.53   44.30 %  focused
+c           0.62    6.04 %  simplify
+c           0.57    5.61 %  probe
+c           0.45    4.42 %  vivify
+c           0.11    1.12 %  reduce
+c           0.08    0.75 %  sweep
+c           0.04    0.43 %  substitute
+c           0.03    0.26 %  eliminate
+c           0.02    0.17 %  walking
+c           0.00    0.04 %  subsume
+c           0.00    0.02 %  parse
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  backbone
+c =============================================
+c          10.23  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   44             8642.34 interval
+c backbone_ticks:                       18810 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     6353 
+c conflicts:                           380263            37178.68 per second
+c decisions:                           565610                1.49 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            63377    interval
+c eliminate_resolutions:               116854            11424.93 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 202761              180.39 per solved
+c kitten_solved:                         1124 
+c kitten_ticks:                       3031367               14.95 per prop
+c probings:                                22            17285    interval
+c probing_ticks:                     26169217 
+c propagations:                       7031479           687474    per second
+c reductions:                              69             5511    interval
+c rephased:                                16            23766    interval
+c restarts:                              9111               41.74 interval
+c searches:                                 1           380263    interval
+c search_ticks:                     281338075 
+c strengthened:                           296                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                    118420 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   22            17285    interval
+c sweep_completed:                          1               22    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           476               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        169              155 %  variables
+c switched_modes:                          31            12267    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           22            17285    interval
+c vivified:                              6796               56 %  checks
+c vivify_checks:                        12228              556    per vivify
+c walk_improved:                            5              100 %  walks
+c walks:                                    5            76053    interval
+c walk_steps:                         7578900 
+c warmups:                                  5              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                            10s          10.227261 seconds
+c ] 10.23  5 18 32 69 9111 1 380263 6353 57% 14 2808 108 99%
+c { 10.23  5 14 32 69 9111 2 380263 6353 56% 11 2808 108 99%
+c
+c  seconds   switched    rate           trail     variables
+c         MB   reductions  conflicts        glue      remaining
+c          level    restarts     redundant  irredundant
+c
+c - 10.41  5 14 32 70 9314 2 387085 5494 56% 11 2808 108 99%
+c - 10.63  5 14 32 71 9569 2 395454 6026 56% 10 2808 108 99%
+c - 10.89  5 14 32 72 10154 2 403880 6269 56% 10 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c          10.41   94.38 %  search
+c           5.33   48.35 %  focused
+c           5.08   46.03 %  stable
+c           0.62    5.60 %  simplify
+c           0.57    5.20 %  probe
+c           0.45    4.10 %  vivify
+c           0.12    1.11 %  reduce
+c           0.08    0.70 %  sweep
+c           0.04    0.39 %  substitute
+c           0.03    0.24 %  eliminate
+c           0.02    0.16 %  walking
+c           0.00    0.04 %  subsume
+c           0.00    0.02 %  parse
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  backbone
+c =============================================
+c          11.03  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   44             9286.64 interval
+c backbone_ticks:                       18810 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                    10995 
+c conflicts:                           408612            37046.27 per second
+c decisions:                           616793                1.51 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            68102    interval
+c eliminate_resolutions:               116854            10594.41 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 202761              180.39 per solved
+c kitten_solved:                         1124 
+c kitten_ticks:                       3031367               14.95 per prop
+c probings:                                22            18573    interval
+c probing_ticks:                     26169217 
+c propagations:                       7555754           685032    per second
+c reductions:                              72             5675    interval
+c rephased:                                16            25538    interval
+c restarts:                             10404               39.27 interval
+c searches:                                 1           408612    interval
+c search_ticks:                     305224056 
+c strengthened:                           296                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                    118420 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   22            18573    interval
+c sweep_completed:                          1               22    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           476               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        169              155 %  variables
+c switched_modes:                          32            12769    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           22            18573    interval
+c vivified:                              6796               56 %  checks
+c vivify_checks:                        12228              556    per vivify
+c walk_improved:                            5              100 %  walks
+c walks:                                    5            81722    interval
+c walk_steps:                         7578900 
+c warmups:                                  5              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                            11s          11.029047 seconds
+c } 11.03  5 14 33 72 10404 2 408612 10995 56% 11 2808 108 99%
+c [ 11.03  5 18 33 72 10404 1 408612 10995 57% 14 2808 108 99%
+c W 11.06  5 18 33 72 10404 1 408612 10995 57% 14 2808 108 99%
+c - 11.17  5 18 33 73 10406 1 412365 6201 57% 14 2808 108 99%
+c u 11.21  5 18 33 73 10407 1 412962 6029 57% 14 2808 108 99%
+c v 11.23  5 18 33 73 10407 1 412962 5897 57% 14 2808 108 99%
+c - 11.45  5 18 33 74 10410 1 420911 5405 57% 14 2808 108 99%
+c - 11.70  5 18 33 75 10417 1 429513 5260 57% 14 2808 108 99%
+c - 11.95  5 18 33 76 10418 1 438174 5386 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c          11.28   94.13 %  search
+c           5.95   49.63 %  stable
+c           5.33   44.50 %  focused
+c           0.70    5.85 %  simplify
+c           0.63    5.26 %  probe
+c           0.50    4.16 %  vivify
+c           0.13    1.11 %  reduce
+c           0.08    0.71 %  sweep
+c           0.05    0.38 %  substitute
+c           0.04    0.37 %  walking
+c           0.03    0.22 %  eliminate
+c           0.00    0.04 %  subsume
+c           0.00    0.02 %  warmup
+c           0.00    0.02 %  parse
+c           0.00    0.01 %  backbone
+c =============================================
+c          11.98  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   46             9561.37 interval
+c backbone_ticks:                       19663 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     7033 
+c conflicts:                           439823            36697.25 per second
+c decisions:                           651672                1.48 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            73304    interval
+c eliminate_resolutions:               116854             9749.88 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 215551              191.60 per solved
+c kitten_solved:                         1125 
+c kitten_ticks:                       3364258               15.61 per prop
+c probings:                                23            19123    interval
+c probing_ticks:                     29244318 
+c propagations:                       8108437           676539    per second
+c reductions:                              76             5787    interval
+c rephased:                                17            25872    interval
+c restarts:                             10418               42.22 interval
+c searches:                                 1           439823    interval
+c search_ticks:                     331860856 
+c strengthened:                           315                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                    124268 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   23            19123    interval
+c sweep_completed:                          1               23    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           477               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        170              156 %  variables
+c switched_modes:                          33            13328    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           23            19123    interval
+c vivified:                              7715               54 %  checks
+c vivify_checks:                        14209              618    per vivify
+c walk_improved:                            6              100 %  walks
+c walks:                                    6            73304    interval
+c walk_steps:                        19402207 
+c warmups:                                  6              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                            12s          11.984453 seconds
+c ] 11.98  5 18 34 76 10418 1 439823 7033 57% 14 2808 108 99%
+c { 11.98  5 14 34 76 10418 2 439823 7033 56% 11 2808 108 99%
+c - 12.20  5 14 34 77 10721 2 446891 6002 56% 11 2808 108 99%
+c u 12.49  6 14 34 77 11012 2 454156 12900 56% 10 2808 108 99%
+c v 12.51  6 14 34 77 11012 2 454156 12802 56% 10 2808 108 99%
+c - 12.57  5 14 34 78 11032 2 455665 6135 56% 10 2808 108 99%
+c - 12.83  5 14 34 79 11331 2 464497 6562 56% 10 2808 108 99%
+cfocusedc
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c          12.24   93.92 %  search
+c           6.29   48.29 %  focused
+c           5.95   45.63 %  stable
+c           0.79    6.07 %  simplify
+c           0.72    5.52 %  probe
+c           0.58    4.43 %  vivify
+c           0.14    1.09 %  reduce
+c           0.09    0.71 %  sweep
+c           0.05    0.38 %  substitute
+c           0.04    0.34 %  walking
+c           0.03    0.20 %  eliminate
+c           0.00    0.03 %  subsume
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  parse
+c           0.00    0.01 %  backbone
+c =============================================
+c          13.04  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   48             9815.69 interval
+c backbone_ticks:                       20525 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                    13210 
+c conflicts:                           471153            36139.01 per second
+c decisions:                           704421                1.50 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            78526    interval
+c eliminate_resolutions:               116854             8963.09 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 229356              203.69 per solved
+c kitten_solved:                         1126 
+c kitten_ticks:                       3715835               16.20 per prop
+c probings:                                24            19631    interval
+c probing_ticks:                     32803716 
+c propagations:                       8696911           667082    per second
+c reductions:                              79             5964    interval
+c rephased:                                17            27715    interval
+c restarts:                             11602               40.61 interval
+c searches:                                 1           471153    interval
+c search_ticks:                     358497483 
+c strengthened:                           378                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                    133452 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   24            19631    interval
+c sweep_completed:                          1               24    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           478               42 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        171              157 %  variables
+c switched_modes:                          34            13857    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           24            19631    interval
+c vivified:                              8235               54 %  checks
+c vivify_checks:                        15243              635    per vivify
+c walk_improved:                            6              100 %  walks
+c walks:                                    6            78526    interval
+c walk_steps:                        19402207 
+c warmups:                                  6              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                            13s          13.038979 seconds
+c } 13.04  5 14 35 79 11602 2 471153 13210 56% 10 2808 108 99%
+c
+c  seconds   switched     rate            trail     variables
+c         MB   reductions   conflicts         glue      remaining
+c          level    restarts       redundant  irredundant
+c
+c [ 13.04  5 18 35 79 11602 1 471153 13210 57% 14 2808 108 99%
+c O 13.04  5 18 35 79 11602 1 471153 13210 57% 14 2808 108 99%
+c - 13.11  6 18 35 80 11604 1 473386 6695 57% 14 2808 108 99%
+c - 13.38  5 18 35 81 11608 1 482330 6311 57% 14 2808 108 99%
+c - 13.65  5 18 35 82 11614 1 491330 6047 57% 14 2808 108 99%
+c u 13.86  6 18 35 82 11616 1 497530 11755 57% 14 2808 108 99%
+c v 13.88  6 18 35 82 11616 1 497530 11619 57% 14 2808 108 99%
+c - 13.99  5 18 35 83 11616 1 500385 5544 57% 14 2808 108 99%
+cstablec
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c          13.20   93.81 %  search
+c           6.90   49.04 %  stable
+c           6.30   44.77 %  focused
+c           0.87    6.17 %  simplify
+c           0.80    5.67 %  probe
+c           0.64    4.55 %  vivify
+c           0.15    1.09 %  reduce
+c           0.10    0.72 %  sweep
+c           0.05    0.38 %  substitute
+c           0.04    0.32 %  walking
+c           0.03    0.19 %  eliminate
+c           0.00    0.03 %  subsume
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  parse
+c           0.00    0.01 %  backbone
+c =============================================
+c          14.07  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   50            10063.86 interval
+c backbone_ticks:                       21381 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     8351 
+c conflicts:                           503193            35771.61 per second
+c decisions:                           739884                1.47 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            83866    interval
+c eliminate_resolutions:               116854             8307.06 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 243622              216.17 per solved
+c kitten_solved:                         1127 
+c kitten_ticks:                       4105014               16.85 per prop
+c probings:                                25            20128    interval
+c probing_ticks:                     36723655 
+c propagations:                       9265222           658658    per second
+c reductions:                              83             6063    interval
+c rephased:                                18            27955    interval
+c restarts:                             11616               43.32 interval
+c searches:                                 1           503193    interval
+c search_ticks:                     388030079 
+c strengthened:                           390                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                    142054 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   25            20128    interval
+c sweep_completed:                          1               25    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           479               43 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        172              158 %  variables
+c switched_modes:                          35            14377    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           25            20128    interval
+c vivified:                              8854               54 %  checks
+c vivify_checks:                        16506              660    per vivify
+c walk_improved:                            6              100 %  walks
+c walks:                                    6            83866    interval
+c walk_steps:                        19402207 
+c warmups:                                  6              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                            14s          14.066101 seconds
+c ] 14.07  5 18 36 83 11616 1 503193 8351 57% 14 2808 108 99%
+c { 14.07  5 14 36 83 11616 2 503193 8351 56% 10 2808 108 99%
+c - 14.27  5 14 36 84 12021 2 509495 6027 56% 11 2808 108 99%
+c - 14.62  5 14 36 85 12543 2 518660 6728 56% 11 2808 108 99%
+c } 14.71  5 14 36 85 12833 2 521535 9598 56% 11 2808 108 99%
+c 1 14.71  5 14 36 85 12833 2 521535 9598 56% 11 2808 108 99%
+c
+c ---- [ result ] ------------------------------------------------------------
+c
+s SATISFIABLE
+c
+c ---- [ profiling ] ---------------------------------------------------------
+c
+c          13.84   94.08 %  search
+c           6.94   47.18 %  focused
+c           6.90   46.90 %  stable
+c           0.87    5.90 %  simplify
+c           0.80    5.42 %  probe
+c           0.64    4.35 %  vivify
+c           0.16    1.07 %  reduce
+c           0.10    0.69 %  sweep
+c           0.05    0.36 %  substitute
+c           0.04    0.30 %  walking
+c           0.03    0.18 %  eliminate
+c           0.00    0.03 %  subsume
+c           0.00    0.02 %  warmup
+c           0.00    0.01 %  parse
+c           0.00    0.01 %  backbone
+c =============================================
+c          14.71  100.00 %  total
+c
+c ---- [ statistics ] --------------------------------------------------------
+c
+c backbone_computations:                   50            10430.70 interval
+c backbone_ticks:                       21381 
+c clauses_irredundant:                   2808 
+c clauses_redundant:                     9598 
+c conflicts:                           521535            35458.49 per second
+c decisions:                           779666                1.49 per conflict
+c eliminated:                               0                0 %  variables
+c eliminations:                             6            86922    interval
+c eliminate_resolutions:               116854             7944.75 per second
+c forward_checks:                      206796 
+c forward_steps:                       249850                1    per check
+c kitten_propagations:                 243622              216.17 per solved
+c kitten_solved:                         1127 
+c kitten_ticks:                       4105014               16.85 per prop
+c probings:                                25            20861    interval
+c probing_ticks:                     36723655 
+c propagations:                       9614915           653706    per second
+c reductions:                              85             6136    interval
+c rephased:                                18            28974    interval
+c restarts:                             12833               40.64 interval
+c searches:                                 1           521535    interval
+c search_ticks:                     405545484 
+c strengthened:                           390                0 %  checks
+c substituted:                              0                0 %  variables
+c substitute_ticks:                    142054 
+c subsumption_checks:                  206796 
+c subsumed:                                 0                0 %  checks
+c sweep:                                   25            20861    interval
+c sweep_completed:                          1               25    sweeps
+c sweep_equivalences:                       0                0 %  variables
+c sweep_solved:                           479               43 %  kitten_solved
+c sweep_units:                              0                0 %  variables
+c sweep_variables:                        172              158 %  variables
+c switched_modes:                          36            14487    interval
+c units:                                    0                0 %  variables
+c variables_activated:                    108                0.99 per variable
+c variables_added:                        108                0.99 per variable
+c variables_removed:                      108                0.99 variables
+c vivifications:                           25            20861    interval
+c vivified:                              8854               54 %  checks
+c vivify_checks:                        16506              660    per vivify
+c walk_improved:                            6              100 %  walks
+c walks:                                    6            86922    interval
+c walk_steps:                        19402207 
+c warmups:                                  6              100 %  walks
+c
+c ---- [ resources ] ---------------------------------------------------------
+c
+c maximum-resident-set-size:         13709312 bytes         13 MB
+c process-time:                            15s          14.707599 seconds
+c
+c ---- [ shutting down ] -----------------------------------------------------
+c
+c exit 10

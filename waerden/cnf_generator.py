@@ -3,7 +3,7 @@ import os
 
 def make_cnf(j, k, n):
     # このファイルと同じ階層にcnfファイルを置くフォルダを作る
-    script_saving_directory = f"{os.path.dirname(os.path.abspath(__file__))}/waerden_cnf"
+    script_saving_directory = f"{os.path.dirname(os.path.abspath(__file__))}/cnf"
     os.makedirs(script_saving_directory, exist_ok=True)
 
     filepath=f"{script_saving_directory}/waerden_{j}_{k}_{n}.cnf"

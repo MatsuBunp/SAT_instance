@@ -1,0 +1,18 @@
+c ---- [ banner ] ------------------------------------------------------------
+c
+c Kissat SAT Solver
+c 
+c Copyright (c) 2021-2022 Armin Biere University of Freiburg
+c Copyright (c) 2019-2021 Armin Biere Johannes Kepler University Linz
+c 
+c Version 3.0.0 04691ecb8fb57fb02e95ce19153764a501e72c8b
+c gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 -W -Wall -O3 -DNDEBUG
+c Fri May 17 12:24:20 JST 2024 Linux matsusewin 5.15.146.1-microsoft-standard-WSL2 x86_64
+c
+c ---- [ parsing ] -----------------------------------------------------------
+c
+c opened and reading DIMACS file:
+c
+c   ./langford/cnf/langford_1.cnf
+c
+c parsed 'p cnf 0 3' header
